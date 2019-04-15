@@ -1,8 +1,6 @@
 CC = gcc
 
-SRCS = array_exam.c int_array.c function_array.c two_array.c
-
-TARGET =
+SRCS = simple_pointer.c casebycase_pointer.c pointer_conn.c array_pointer.c arrayname_pointer.c
 
 BUILDDIR = build
 
