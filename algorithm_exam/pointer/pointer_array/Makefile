@@ -1,7 +1,6 @@
 CC = gcc
 
-SRCS = simple_pointer.c casebycase_pointer.c pointer_conn.c array_pointer.c arrayname_pointer.c arrayname_pointer2.c \
-pointer_input.c
+SRCS = pointer_array.c pointer_con.c pointer_reference.c
 
 BUILDDIR = build
 

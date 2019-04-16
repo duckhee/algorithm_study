@@ -1,11 +1,12 @@
 CC = gcc
 
-SRCS = simple_pointer.c casebycase_pointer.c pointer_conn.c array_pointer.c arrayname_pointer.c arrayname_pointer2.c \
-pointer_input.c
+SRCS = ex1_dataInsert.c ex2_linkedList.c ex2_linkedList.c ex3_linkedListDelete.c \
+ex4_doublelinkedList.c ex5_linkedListStack.c ex6_linkedListQueue.c
 
 BUILDDIR = build
 
 COBJS = $(addprefix $(BUILDDIR)/, $(SRCS:.c=.o))
+
 
 all: clean createdirs $(COBJS)
 
