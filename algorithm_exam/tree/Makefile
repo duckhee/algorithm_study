@@ -1,12 +1,10 @@
 CC = gcc
 
-SRCS = ex1_dataInsert.c ex2_linkedList.c ex2_linkedList.c ex3_linkedListDelete.c \
-ex4_doublelinkedList.c ex5_Stack.c ex6_Queue.c
+SRCS = 
 
 BUILDDIR = build
 
 COBJS = $(addprefix $(BUILDDIR)/, $(SRCS:.c=.o))
-
 
 all: clean createdirs $(COBJS)
 
@@ -18,4 +16,3 @@ $(COBJS): $(BUILDDIR)/%.o : %.c
 
 clean:
 	rm -rf $(BUILDDIR)
-
