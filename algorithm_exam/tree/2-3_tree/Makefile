@@ -25,3 +25,4 @@ $(COBJS): $(BUILDDIR)/%.o : %.c
 
 clean:
 	rm -rf $(BUILDDIR)
+	rm -rf $(TARGET)
