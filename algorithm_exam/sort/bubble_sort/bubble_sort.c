@@ -2,15 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MAX    100
-#define TRUE   1
-#define FALSE  0
-
+#define MAX       100
+#define TRUE      1
+#define FALSE     0
 
 void MakeRandomNumber(void);
-void InsertionSort(void);
+void BubbleSort(void);
 void DisplayBuffer(void);
-int IsNumberExit(int, int);
+int IsNumberExit(int , int);
 int Buf[MAX];
 
 void MakeRandomNumber(void)
@@ -22,7 +21,7 @@ void MakeRandomNumber(void)
 
     while(i < MAX)
     {
-        Num = rand() & MAX;
+        Num = rand() % MAX;
 
         if(!IsNumberExit(Num, i))
         {
@@ -32,29 +31,31 @@ void MakeRandomNumber(void)
     }
 }
 
-void InsertionSort(void)
+void BubbleSort(void)
 {
     int i, j, dummy;
-    for(i = 0; i < MAX; i++)
-    {
-        dummy = Buf[i];
-        j = i;
 
-        while(Buf[j-1] > dummy && j > 0)
+    for(i = MAX - 1; i >= 0; i--)
+    {
+        for(j = 1; j <= i; j++)
         {
-            Buf[j] = Buf[j-1];
-            j--;
+            if(Buf[j-1] > Buf[j])
+            {
+                dummy = Buf[j-1];
+                Buf[j - 1] = Buf[j];
+                Buf[j] = dummy;
+            }
         }
-        Buf[j] = dummy;
     }
 }
 
 void DisplayBuffer(void)
 {
     int i;
+
     for(i = 0; i < MAX; i++)
     {
-        if((i % 10) == 0)
+        if((i%10) == 0)
         {
             printf("\r\n");
         }
@@ -77,15 +78,18 @@ int IsNumberExit(int number, int index)
     return FALSE;
 }
 
-
 int main()
 {
     printf("sort data \r\n");
+
     MakeRandomNumber();
     DisplayBuffer();
+
     printf("sort result \r\n");
-    InsertionSort();
+    BubbleSort();
     DisplayBuffer();
+
     printf("\r\n");
+
     return 0;
 }
